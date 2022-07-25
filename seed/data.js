@@ -1,5 +1,6 @@
 const db = require('../db')
 const { Song, Post, User } = require('../models')
+//Not using User model just yet. Include if feasible for Post-MVP
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -7,29 +8,74 @@ const main = async () => {
   //Add the songs
   const songs = [
     {
-      name: '',
-      artist: '',
-      genre: ''
+      id: 1,
+      name: 'Family Affair',
+      artist: 'Mary J. Blige',
+      genre: ['R&B', 'Hip Pop'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b273096a7fc9668305db9d3175fc'
     },
     {
-      name: '',
-      artist: '',
-      genre: ''
+      id: 2,
+      name: 'Edge of Seventeen',
+      artist: 'Stevie Nicks',
+      genre: ['Rock', 'Soft Rock'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b273af14d74d5e308ce2f3ec22f8'
     },
     {
-      name: '',
-      artist: '',
-      genre: ''
+      id: 3,
+      name: 'Rainbow Connection',
+      artist: 'Kermit the Frog',
+      genre: ['Cartoon', 'Movie Tunes'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b27325440ce722ccf10e4d000c3d'
     },
     {
-      name: '',
-      artist: '',
-      genre: ''
+      id: 4,
+      name: `Sweet Child O' Mine`,
+      artist: `Guns N' Roses`,
+      genre: ['Hard Rock', 'Rock', 'Glam Metal'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b27321ebf49b3292c3f0f575f0f5'
     },
     {
-      name: '',
-      artist: '',
-      genre: ''
+      id: 5,
+      name: 'Thriller',
+      artist: 'Michael Jackson',
+      genre: ['Pop', 'R&B'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b2734121faee8df82c526cbab2be'
+    },
+    {
+      id: 6,
+      name: 'Here It Goes Again',
+      artist: 'OK GO',
+      genre: ['Alt Rock', 'Pop Rock', 'Indie Rock'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b27371e01645abce04dda00e1c0c'
+    },
+    {
+      id: 7,
+      name: 'Title Theme',
+      artist: 'The Marcus Hedges Trend Orchestra',
+      genre: ['Scorecore', 'VGM'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b273ec30b64fc7a3e86e54924cb4'
+    },
+    {
+      id: 8,
+      name: `Don't You (Forget About Me)`,
+      artist: 'Simple Minds',
+      genre: ['New Romantic', 'Soft Rock', 'Synthpop'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b2735695a657aef0e81bde0c6001'
+    },
+    {
+      id: 9,
+      name: 'Here Comes The Sun',
+      artist: 'The Beatles',
+      genre: ['Classic Rock', 'Rock'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25'
+    },
+    {
+      id: 10,
+      name: 'Work It',
+      artist: 'Missy Elliott',
+      genre: ['Hip Hop', 'R&B', 'Dance Pop'],
+      cover: 'https://i.scdn.co/image/ab67616d0000b27395d8583bba8f3cd794fa5bae'
     }
   ]
 
@@ -39,27 +85,36 @@ const main = async () => {
   //Add the posts
   const posts = [
     {
-      user: '',
-      title: '',
-      image: '',
+      songId: 1,
+      user: 'mjbfan',
+      title: 'Family Affair Tote',
+      image:
+        'https://ctl.s6img.com/society6/img/9uze1MHfvOpGksmCZF87Uv_PlFo/w_700/bags/small/close/~artwork,fw_3500,fh_3500,fx_174,fy_174,iw_3150,ih_3150/s6-original-art-uploads/society6/uploads/misc/89628a8360364357a7280234a6e95df3/~~/no-hateration-holleration-in-this-dancery-mary-j-blige-street-sign-bags.jpg',
+      description: '',
       likes: 0
     },
     {
+      songId: 0,
       user: '',
       title: '',
       image: '',
+      description: '',
       likes: 0
     },
     {
+      songId: 0,
       user: '',
       title: '',
       image: '',
+      description: '',
       likes: 0
     },
     {
+      songId: 0,
       user: '',
       title: '',
       image: '',
+      description: '',
       likes: 0
     }
   ]
@@ -68,31 +123,31 @@ const main = async () => {
   console.log('Uploaded some posts')
 
   //Add the users
-  const users = [
-    {
-      name: '',
-      username: ''
-    },
-    {
-      name: '',
-      username: ''
-    },
-    {
-      name: '',
-      username: ''
-    },
-    {
-      name: '',
-      username: ''
-    },
-    {
-      name: '',
-      username: ''
-    }
-  ]
+  // const users = [
+  //   {
+  //     name: '',
+  //     username: ''
+  //   },
+  //   {
+  //     name: '',
+  //     username: ''
+  //   },
+  //   {
+  //     name: '',
+  //     username: ''
+  //   },
+  //   {
+  //     name: '',
+  //     username: ''
+  //   },
+  //   {
+  //     name: '',
+  //     username: ''
+  //   }
+  // ]
 
-  await User.insertMany(users)
-  console.log('Added some users')
+  // await User.insertMany(users)
+  // console.log('Added some users')
 }
 const run = async () => {
   await main()
