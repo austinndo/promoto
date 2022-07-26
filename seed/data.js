@@ -1,8 +1,7 @@
 const db = require('../db')
 const Song = require('../models/song')
 const Post = require('../models/post')
-// const User = require('../models/user')
-//Not using User model just yet. Include if feasible for Post-MVP
+const User = require('../models/user')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -102,7 +101,7 @@ const main = async () => {
   const posts = [
     {
       songId: 1,
-      user: 'mjbfan',
+      username: 'mjbfan',
       title: 'Family Affair Tote',
       image:
         'https://ctl.s6img.com/society6/img/9uze1MHfvOpGksmCZF87Uv_PlFo/w_700/bags/small/close/~artwork,fw_3500,fh_3500,fx_174,fy_174,iw_3150,ih_3150/s6-original-art-uploads/society6/uploads/misc/89628a8360364357a7280234a6e95df3/~~/no-hateration-holleration-in-this-dancery-mary-j-blige-street-sign-bags.jpg',
@@ -111,7 +110,7 @@ const main = async () => {
     },
     {
       songId: 2,
-      user: 'stevieee',
+      username: 'stevieee',
       title: 'Dove Tattoo',
       image:
         'https://ih1.redbubble.net/image.739857896.6358/fposter,small,wall_texture,product,750x1000.jpg',
@@ -121,7 +120,7 @@ const main = async () => {
     },
     {
       songId: 3,
-      user: 'yellowstonebear',
+      username: 'yellowstonebear',
       title: 'Double Rainbow!',
       image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMavwmWEvr19Cv6TOWmQIuBVNUOjvdv9IQjw&usqp=CAU',
@@ -131,7 +130,7 @@ const main = async () => {
     },
     {
       songId: 4,
-      user: 'puprock',
+      username: 'puprock',
       title: 'Rockin out with Orpheus',
       image:
         'https://media.gettyimages.com/photos/playing-guitar-to-dog-picture-id1215014948?s=2048x2048',
@@ -141,7 +140,7 @@ const main = async () => {
     },
     {
       songId: 5,
-      user: 'tracyjordan',
+      username: 'tracyjordan',
       title: 'Werewolf Bar Mitzvah',
       image:
         'https://scpr.brightspotcdn.com/legacy/i/55435327daed337cc745e816c2929797/5bcf792ed217300008df8143-eight.jpg',
@@ -150,7 +149,7 @@ const main = async () => {
     },
     {
       songId: 6,
-      user: 'okstop',
+      username: 'okstop',
       title: 'Here I Go Again...',
       image:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBZdDqHRgEqt3_4cfWGW8MspbUtaklgYb3cg&usqp=CAU',
@@ -160,7 +159,7 @@ const main = async () => {
     },
     {
       songId: 1,
-      user: 'hateration',
+      username: 'hateration',
       title: 'holleration',
       image:
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.De-bnV61-45mcOmwv5ds_gHaEM%26pid%3DApi&f=1',
@@ -173,32 +172,62 @@ const main = async () => {
   console.log('Uploaded some posts')
 
   //Add the users
-  // const users = [
-  //   {
-  //     name: '',
-  //     username: ''
-  //   },
-  //   {
-  //     name: '',
-  //     username: ''
-  //   },
-  //   {
-  //     name: '',
-  //     username: ''
-  //   },
-  //   {
-  //     name: '',
-  //     username: ''
-  //   },
-  //   {
-  //     name: '',
-  //     username: ''
-  //   }
-  // ]
+  const users = [
+    {
+      name: 'Vivian S Crawford',
+      email: 'pablo_haa2@yahoo.com',
+      username: 'pablo_haa2',
+      password: 'Gardner',
+      favoriteGenres: ['Rock', 'Classic Rock']
+    },
+    {
+      name: 'Awilda T Lass',
+      email: 'cristina1978@hotmail.com',
+      username: 'mjbfan',
+      password: 'Green',
+      favoriteGenres: ['R&B', 'Hip Pop']
+    },
+    {
+      name: 'Marian D Santos',
+      email: 'lorenza.casp@yahoo.com',
+      username: 'stevieee',
+      password: 'Kenny',
+      favoriteGenres: ['Rock', 'Soft Rock']
+    },
+    {
+      name: 'Brett R Nichols',
+      email: 'chanel2007@gmail.com',
+      username: 'yellowstonebear',
+      password: 'Vela',
+      favoriteGenres: ['Cartoon', 'Movie Tunes']
+    },
+    {
+      name: 'Eugene J Legge',
+      email: 'dedric1988@hotmail.com',
+      username: 'puprock',
+      password: 'Presson',
+      favoriteGenres: ['Hard Rock', 'Rock', 'Glam Metal']
+    },
+    {
+      name: 'Tracy Jordan',
+      email: 'grizzdotcom@gmail.com',
+      username: 'tracyjordan',
+      password: 'Jeremy',
+      favoriteGenres: ['Pop', 'R&B']
+    },
+    {
+      name: 'John K Barnes',
+      email: 'roy2001@yahoo.com',
+      username: 'okstop',
+      password: 'Evans',
+      favoriteGenres: ['Alt Rock', 'Pop Rock', 'Indie Rock']
+    }
+  ]
 
-  // await User.insertMany(users)
-  // console.log('Added some users')
+  await User.insertMany(users)
+  console.log('Added some users')
 }
+
 const run = async () => {
   await main()
   db.close()

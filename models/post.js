@@ -6,10 +6,10 @@ const Schema = mongoose.Schema
 const Post = new Schema(
   {
     songId: { type: Number, required: true },
-    user: { type: String, required: true },
+    username: { type: String, required: true },
     title: { type: String, required: true },
     image: { type: String, required: true },
-    description: { type: String, required: true },
+    description: { type: String },
     likes: { type: Number, required: true }
   },
   { timestamps: true }

@@ -7,7 +7,8 @@ const Song = new Schema(
     name: { type: String, required: true },
     artist: { type: String, required: true },
     genre: [{ type: String, required: true }],
-    cover: { type: String, required: true }
+    cover: { type: String },
+    posts: [{ type: String }]
   },
   { timestamps: true }
 )

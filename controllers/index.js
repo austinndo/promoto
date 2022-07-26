@@ -120,16 +120,30 @@ const updateSongGenres = async (req, res) => {
 
 const updatePost = async (req, res) => {
   try {
-    const postId = req.params.objectId
-    const updatedPost = await Post.updateOne(req.body, {
-      where: { _id: postId },
-      returning: true
+    const { id } = req.params
+    await Post.findByIdAndUpdate(id, req.body, { new: true }, (err, post) => {
+      if (err) {
+        res.status(500).send(err)
+      }
+      if (!post) {
+        res.status(500).send('Post does not exist!')
+      }
+      return res.status(200).json(post)
     })
-    res.send(updatedPost)
   } catch (error) {
-    throw error
+    return res.status(500).send(error.message)
   }
 }
+
+// const updatePost = async (req, res) => {
+//   try {
+//     const postId = req.params.id
+//     const updatedPost = await Post.findByIdAndUpdate({ _id: postId }, { req.body })
+//     res.json(updatedPost)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 const updatePostGenres = async (req, res) => {
   try {

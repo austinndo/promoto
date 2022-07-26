@@ -19,13 +19,13 @@ router.get('/posts', controllers.getPosts)
 router.get('/post/:id', controllers.getPostById)
 
 ////////-------- Update --------////////
-//put vs patch ??
+//put vs patch ?? for genre update?
 
 router.put('/post/edit/:id', controllers.updatePost)
 
 router.put('/song/edit/:id', controllers.updateSong)
 
-router.put('/song/edit-genres/:id', controllers.updateSongGenres)
+router.patch('/song/edit-genres/:id', controllers.updateSongGenres)
 
 router.put('/post/edit-genres/:id', controllers.updatePostGenres)
 
