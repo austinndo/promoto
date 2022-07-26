@@ -29,13 +29,13 @@ router.get('/users/:id', controllers.getUserById)
 ////////-------- Update --------////////
 //put vs patch ?? for genre update?
 
-router.put('/post/edit/:id', controllers.updatePost)
-
-router.put('/song/edit/:id', controllers.updateSong)
+router.patch('/song/edit/:id', controllers.updateSong)
 
 router.patch('/song/edit-genres/:id', controllers.updateSongGenres)
 
-router.put('/post/edit-genres/:id', controllers.updatePostGenres)
+router.patch('/post/edit/:id', controllers.updatePost)
+
+router.patch('/post/edit-genres/:id', controllers.updatePostGenres)
 
 ////////-------- Delete --------////////
 

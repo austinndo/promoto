@@ -106,20 +106,6 @@ const updateSong = async (req, res) => {
   }
 }
 
-// const updateGenres = async (req, res) => {
-//   try {
-//     const newGenre = req.body.genre
-//     const songId = req.params.objectId
-//     const updatedGenres = await Song.update(
-//       { _id: songId },
-//       { $push: { genre: { newGenre } } }
-//     )
-//     res.send(updatedGenres)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 const updateSongGenres = async (req, res) => {
   try {
     const newGenres = await Song.findByIdAndUpdate(
@@ -134,30 +120,13 @@ const updateSongGenres = async (req, res) => {
 
 const updatePost = async (req, res) => {
   try {
-    const { id } = req.params
-    await Post.findByIdAndUpdate(id, req.body, { new: true }, (err, post) => {
-      if (err) {
-        res.status(500).send(err)
-      }
-      if (!post) {
-        res.status(500).send('Post does not exist!')
-      }
-      return res.status(200).json(post)
-    })
+    const postId = req.params.id
+    const updatedPost = await Post.findByIdAndUpdate({ _id: postId }, req.body)
+    res.json(updatedPost)
   } catch (error) {
-    return res.status(500).send(error.message)
+    throw error
   }
 }
-
-// const updatePost = async (req, res) => {
-//   try {
-//     const postId = req.params.id
-//     const updatedPost = await Post.findByIdAndUpdate({ _id: postId }, { req.body })
-//     res.json(updatedPost)
-//   } catch (error) {
-//     throw error
-//   }
-// }
 
 const updatePostGenres = async (req, res) => {
   try {
@@ -166,6 +135,16 @@ const updatePostGenres = async (req, res) => {
       { $push: { genre: { $each: req.body.genre } } }
     )
     res.json({ newGenres })
+  } catch (error) {
+    throw error
+  }
+}
+
+const updateUser = async (req, res) => {
+  try {
+    const userId = req.params.id
+    const user = await User.findByIdAndUpdate({ _id: userId }, req.body)
+    res.json(user)
   } catch (error) {
     throw error
   }
@@ -218,10 +197,11 @@ module.exports = {
   getUsers,
   getUserById,
   //Update
-  updatePost,
   updateSong,
   updateSongGenres,
+  updatePost,
   updatePostGenres,
+  updateUser,
   //Delete
   deleteSong,
   deletePost,
