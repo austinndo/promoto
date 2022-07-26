@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-//reference user from user data
-
 const Post = new Schema(
   {
     songId: { type: Number, required: true },

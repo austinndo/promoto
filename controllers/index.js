@@ -1,28 +1,34 @@
 const Song = require('../models/song')
 const Post = require('../models/post')
-
-////---------------------------- Songs ----------------------------////
+const User = require('../models/user')
 
 //------------ Create ------------//
 
-//How it was done in the review
-// const createSongg = async (req, res) => {
-//   try {
-//     const newSong = await Song.create(req.body)
-//     await newSong.save()
-//     return res.status(201).json({ newSong })
-//      ||
-//     res.send(newSong)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
-const createSong = async (req, res) => {
+const addSong = async (req, res) => {
   try {
-    const newSong = await new Song(req.body)
-    await newSong.save()
-    return res.status(201).json({ newSong })
+    const song = await new Song(req.body)
+    await song.save()
+    return res.status(201).json({ song })
+  } catch (error) {
+    throw error
+  }
+}
+
+const addPost = async (req, res) => {
+  try {
+    const post = await new Post(req.body)
+    await post.save()
+    return res.status(201).json({ post })
+  } catch (error) {
+    throw error
+  }
+}
+
+const addUser = async (req, res) => {
+  try {
+    const user = await new User(req.body)
+    await user.save()
+    return res.status(201).json({ user })
   } catch (error) {
     throw error
   }
@@ -48,16 +54,6 @@ const getSongById = async (req, res) => {
   }
 }
 
-//------------ Update ------------//
-
-//------------ Delete ------------//
-
-////---------------------------- Posts ----------------------------////
-
-//---------------- Create ----------------//
-
-//---------------- Read ----------------//
-
 const getPosts = async (req, res) => {
   try {
     const posts = await Post.find()
@@ -76,7 +72,25 @@ const getPostById = async (req, res) => {
   }
 }
 
-//---------------- Update ----------------//
+const getUsers = async (req, res) => {
+  try {
+    const users = await User.find()
+    return res.status(200).json({ users })
+  } catch (error) {
+    throw error
+  }
+}
+
+const getUserById = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    return res.status(200).json({ user })
+  } catch (error) {
+    throw error
+  }
+}
+
+//------------ Update ------------//
 
 //consider using the ids saved in the database we created manually
 const updateSong = async (req, res) => {
@@ -157,26 +171,33 @@ const updatePostGenres = async (req, res) => {
   }
 }
 
-//---------------- Delete ----------------//
+//------------ Delete ------------//
 
-// const deletePost = async (req, res) => {
-//   try {
-//     const postId = req.params.objectId
-//     await Post.findByIdAndDelete({ where: { _id: postId } })
-//     res.send({ msg: `Post of id: ${postId} deleted` })
-//   } catch (error) {
-//     throw error
-//   }
-// }
+const deleteSong = async (req, res) => {
+  try {
+    const songId = req.params.id
+    await Song.findByIdAndDelete({ _id: songId })
+    res.send({ msg: `Song of id: ${songId} deleted` })
+  } catch (error) {
+    throw error
+  }
+}
 
 const deletePost = async (req, res) => {
   try {
-    const { id } = req.params
-    const deleted = await Post.findByIdAndDelete(id)
-    if (deleted) {
-      return res.status(200).send('Post deleted')
-    }
-    throw new Error('Post not found')
+    const postId = req.params.id
+    await Post.findByIdAndDelete({ _id: postId })
+    res.send({ msg: `Post of id: ${postId} deleted` })
+  } catch (error) {
+    throw error
+  }
+}
+
+const deleteUser = async (req, res) => {
+  try {
+    const userId = req.params.id
+    await User.findByIdAndDelete({ _id: userId })
+    res.send({ msg: `User of id: ${userId} deleted` })
   } catch (error) {
     throw error
   }
@@ -185,16 +206,26 @@ const deletePost = async (req, res) => {
 ////////-------- Module Exports --------////////
 
 module.exports = {
-  createSong,
+  //Create
+  addSong,
+  addPost,
+  addUser,
+  //Read
   getSongs,
   getSongById,
   getPosts,
   getPostById,
+  getUsers,
+  getUserById,
+  //Update
   updatePost,
   updateSong,
   updateSongGenres,
   updatePostGenres,
-  deletePost
+  //Delete
+  deleteSong,
+  deletePost,
+  deleteUser
 }
 
 //////----------Notes from Router and Controller Review------------////////////

@@ -4,7 +4,11 @@ const controllers = require('../controllers')
 
 ////////-------- Create --------////////
 
-router.post('/new-song', controllers.createSong)
+router.post('/new-song', controllers.addSong)
+
+router.post('/new-post', controllers.addPost)
+
+router.post('/new-user', controllers.addUser)
 
 ////////-------- Read --------////////
 
@@ -17,6 +21,10 @@ router.get('/song/id/:id', controllers.getSongById)
 router.get('/posts', controllers.getPosts)
 
 router.get('/post/:id', controllers.getPostById)
+
+router.get('/users', controllers.getUsers)
+
+router.get('/users/:id', controllers.getUserById)
 
 ////////-------- Update --------////////
 //put vs patch ?? for genre update?
@@ -31,6 +39,10 @@ router.put('/post/edit-genres/:id', controllers.updatePostGenres)
 
 ////////-------- Delete --------////////
 
+router.delete('/song/:id', controllers.deleteSong)
+
 router.delete('/post/:id', controllers.deletePost)
+
+router.delete('/user/:id', controllers.deleteUser)
 
 module.exports = router
