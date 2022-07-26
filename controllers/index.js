@@ -92,15 +92,27 @@ const updateSong = async (req, res) => {
   }
 }
 
-const updateGenres = async (req, res) => {
+// const updateGenres = async (req, res) => {
+//   try {
+//     const newGenre = req.body.genre
+//     const songId = req.params.objectId
+//     const updatedGenres = await Song.update(
+//       { _id: songId },
+//       { $push: { genre: { newGenre } } }
+//     )
+//     res.send(updatedGenres)
+//   } catch (error) {
+//     throw error
+//   }
+// }
+
+const updateSongGenres = async (req, res) => {
   try {
-    const newGenre = req.body.genre
-    const songId = req.params.objectId
-    const updatedSong = await Song.update(
-      { _id: songId },
-      { $push: { genre: { newGenre } } }
+    const newGenres = await Song.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $push: { genre: { $each: req.body.genre } } }
     )
-    res.send(updatedSong)
+    res.json({ newGenres })
   } catch (error) {
     throw error
   }
@@ -109,11 +121,23 @@ const updateGenres = async (req, res) => {
 const updatePost = async (req, res) => {
   try {
     const postId = req.params.objectId
-    const updatedPost = await Post.update(req.body, {
+    const updatedPost = await Post.updateOne(req.body, {
       where: { _id: postId },
       returning: true
     })
     res.send(updatedPost)
+  } catch (error) {
+    throw error
+  }
+}
+
+const updatePostGenres = async (req, res) => {
+  try {
+    const newGenres = await Post.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $push: { genre: { $each: req.body.genre } } }
+    )
+    res.json({ newGenres })
   } catch (error) {
     throw error
   }
@@ -154,7 +178,8 @@ module.exports = {
   getPostById,
   updatePost,
   updateSong,
-  updateGenres,
+  updateSongGenres,
+  updatePostGenres,
   deletePost
 }
 

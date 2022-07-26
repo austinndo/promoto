@@ -25,7 +25,9 @@ router.put('/post/edit/:id', controllers.updatePost)
 
 router.put('/song/edit/:id', controllers.updateSong)
 
-router.put('/song/genres/:id', controllers.updateGenres)
+router.put('/song/edit-genres/:id', controllers.updateSongGenres)
+
+router.put('/post/edit-genres/:id', controllers.updatePostGenres)
 
 ////////-------- Delete --------////////
 

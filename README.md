@@ -49,3 +49,5 @@
 ### 1. Images: [DuckDuckGo Search](https://duckduckgo.com/)
 
 ### 2. Genre Finder and Album Covers: [Chosic](https://www.chosic.com/music-genre-finder/)
+
+### 3. Update Array in a MongoDB Collection: [MongoDB](https://www.mongodb.com/docs/v4.2/reference/operator/update/push/)
