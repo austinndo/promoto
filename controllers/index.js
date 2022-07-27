@@ -72,6 +72,15 @@ const getPostById = async (req, res) => {
   }
 }
 
+const getPostsBySongId = async (req, res) => {
+  try {
+    const posts = await Post.find({ songId: req.params.songId })
+    return res.status(200).json({ posts })
+  } catch (error) {
+    throw error
+  }
+}
+
 const getUsers = async (req, res) => {
   try {
     const users = await User.find()
@@ -194,6 +203,7 @@ module.exports = {
   getSongById,
   getPosts,
   getPostById,
+  getPostsBySongId,
   getUsers,
   getUserById,
   //Update

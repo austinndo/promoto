@@ -22,6 +22,8 @@ router.get('/posts', controllers.getPosts)
 
 router.get('/post/:id', controllers.getPostById)
 
+router.get('/posts/:songId', controllers.getPostsBySongId)
+
 router.get('/users', controllers.getUsers)
 
 router.get('/users/:id', controllers.getUserById)

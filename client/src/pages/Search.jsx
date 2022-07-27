@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import musicRecord from '../assets/musicRecord.png'
 
 const Search = () => {
 
@@ -15,7 +16,7 @@ const Search = () => {
     </nav>
 
     <div className='search'>
-      <Link to="/promoto/search/songs">Songs</Link>
+      <Link to="/promoto/search/songs"><img src={musicRecord} alt="music-record" /></Link>
       <Link to="/promoto/search/posts">Posts</Link>
       <Link to="/promoto/search/users">Users</Link>
     </div>
