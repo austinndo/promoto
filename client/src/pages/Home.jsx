@@ -16,7 +16,6 @@ const Home = () => {
     getPosts()
   }, [])
 
-  console.log([posts])
   return (
     <div className="home">
       <div className="navbar">

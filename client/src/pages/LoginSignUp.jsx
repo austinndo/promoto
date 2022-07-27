@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { Link } from 'react-router-dom'
 
-const Create = (props) => {
+const LoginSignUp = (props) => {
   
 //   let navigate = useNavigate()
 
@@ -55,13 +55,18 @@ const Create = (props) => {
   return (
     <div>
     <Link to="/promoto">Back</Link>
-    <h1>Create a new post</h1>
+    <div className="Login"> 
+    <h1>Login / Sign Up</h1>
       <form>
-      <input type="text" title={'name'} placeholder={'title'} />
-      <input type="text" image={'name'} placeholder={'img src'} />
-      <input type="text" description={'name'} placeholder={'description'} />
+      <input type="text" username={'name'} placeholder={'username'} />
+      <input type="text" password={'name'} placeholder={'password'} />
       </form>
       <button>Submit</button>
+    </div>
+
+    <div className="Signup">
+      <Link to="/promoto/signup">Signup</Link>
+    </div>
     </div>
   );
 }
@@ -72,4 +77,4 @@ const Create = (props) => {
 <input type="text" value={newBoat.price} onChange={ props.handleChange} name={'price'} placeholder={'price'} />
 <button>Submit</button> */}
 
-export default Create
+export default LoginSignUp
