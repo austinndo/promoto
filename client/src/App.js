@@ -7,7 +7,8 @@ import Posts from './components/search/Posts'
 import Users from './components/search/Users'
 import Spotlight from './pages/Spotlight'
 import Create from './pages/Create'
-import LoginSignUp from './pages/LoginSignUp'
+import Login from './pages/Login'
+import Edit from './pages/Edit'
 
 function App() {
   // const [songs, setSongs] = useState([])
@@ -35,7 +36,8 @@ function App() {
         <Route path="/promoto/search/users" element={<Users />} />
         <Route path="/promoto/spotlight" element={<Spotlight />} />
         <Route path="/promoto/add" element={<Create />} />
-        <Route path="/promoto/login-signup" element={<LoginSignUp />} />
+        <Route path="/promoto/login" element={<Login />} />
+        <Route path="/promoto/edit" element={<Edit />} />
       </Routes>
     </div>
   )

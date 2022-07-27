@@ -22,7 +22,7 @@ const [songs, setSongs] = useState([])
         {songs.map((song) => (
         <div key={song.id} className="searchSongs">
         <img className="songCover" src={song.cover} alt="album-cover"/>
-        <h4>{song.name}</h4>
+        <h2>"{song.name}"</h2>
         <h4>{song.artist}</h4>
         </div>))}
       </div>

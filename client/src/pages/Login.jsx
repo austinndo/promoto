@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { Link } from 'react-router-dom'
 
-const LoginSignUp = (props) => {
+const Login = (props) => {
   
 //   let navigate = useNavigate()
 
@@ -77,4 +77,4 @@ const LoginSignUp = (props) => {
 <input type="text" value={newBoat.price} onChange={ props.handleChange} name={'price'} placeholder={'price'} />
 <button>Submit</button> */}
 
-export default LoginSignUp
+export default Login

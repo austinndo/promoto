@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Create = (props) => {
+const Edit = (props) => {
   
   let navigate = useNavigate()
 
@@ -120,10 +120,10 @@ const Create = (props) => {
   }
 
   return (
-    <div className="Create">
+    <div className="Edit">
     <Link to="/promoto">Back</Link>
     <div className="addSongContainer">
-      <h1>Add a new song</h1>
+      <h1>Edit a Song</h1>
         <form>
         <input type="text" onChange={handleChangeSong} name={'name'} placeholder={'name'} required/> <br></br>
         <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'artist'} required/> <br></br>
@@ -134,7 +134,7 @@ const Create = (props) => {
       </div>
 
     <div className="createPostContainer">
-      <h1>Create a new post</h1>
+      <h1>Edit a Post</h1>
         <form>
         <input type="text" onChange={handleChangePost} name={'songId'} placeholder={'songId'} required/> <br></br>
         <input type="text" onChange={handleChangePost} name={'username'} placeholder={'username'} required/> <br></br>
@@ -148,4 +148,4 @@ const Create = (props) => {
   );
 }
 
-export default Create
+export default Edit

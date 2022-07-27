@@ -1,8 +1,9 @@
 .Promoto {
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
-  background: linear-gradient(rgb(8, 8, 60), rgba(28, 28, 28, 0.802)) ;
+  background: linear-gradient(rgb(8, 8, 60), rgba(28, 28, 28, 0.802));
 }
 
 .navbar {
@@ -12,7 +13,6 @@
   background-color: rgb(80, 80, 80);
   padding: 1em;
   min-height: 2em;
-  font-family: 'Georgia';
 }
 
 .postCardContainer {
@@ -20,7 +20,7 @@
   grid-template-columns: repeat(1, minmax(250px, 1fr));
   grid-gap: 8em;
   padding: 12em;
-  max-width: 50em;
+  width: max-content;
 }
 
 .postCard {
@@ -32,11 +32,12 @@
   text-align: center;
   justify-content: space-between;
   background-color: #b2adad;
+  width: 60% max-content;
 }
 
 .postCardUsernameLikes {
   text-align: left;
-  display: inline;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -46,6 +47,8 @@
 
 .spotlight {
   background-image: url(https://c4.wallpaperflare.com/wallpaper/855/629/176/music-concerts-wallpaper-preview.jpg);
+  min-height: max-content;
+  min-width: max-content;
 }
 
 .searchSongsContainer {
@@ -56,6 +59,10 @@
   padding: 12em;
   max-width: 50em;
   background-color: rgb(99, 99, 99);
+}
+
+.searchSongs {
+  font-size: 80%;
 }
 
 .songCover {
@@ -74,4 +81,9 @@
 
 .searchPostImage {
   max-width: 200px;
+}
+
+.Create {
+  min-height: 100vh;
+  color: white;
 }

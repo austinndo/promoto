@@ -4,11 +4,11 @@ const controllers = require('../controllers')
 
 ////////-------- Create --------////////
 
-router.post('/new-song', controllers.addSong)
+router.post('/song', controllers.addSong)
 
-router.post('/new-post', controllers.addPost)
+router.post('/post', controllers.addPost)
 
-router.post('/new-user', controllers.addUser)
+router.post('/user', controllers.addUser)
 
 ////////-------- Read --------////////
 
