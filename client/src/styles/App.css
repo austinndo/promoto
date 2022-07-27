@@ -34,10 +34,44 @@
   background-color: #b2adad;
 }
 
+.postCardUsernameLikes {
+  text-align: left;
+  display: inline;
+  justify-content: space-between;
+}
+
 .postCardImage {
   min-height: 40px;
 }
 
 .spotlight {
   background-image: url(https://c4.wallpaperflare.com/wallpaper/855/629/176/music-concerts-wallpaper-preview.jpg);
+}
+
+.searchSongsContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-gap: 8em;
+  padding: 12em;
+  max-width: 50em;
+  background-color: rgb(99, 99, 99);
+}
+
+.songCover {
+  max-width: 280px;
+}
+
+.searchPostsContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-gap: 8em;
+  padding: 12em;
+  max-width: 50em;
+  background-color: rgb(99, 99, 99);
+}
+
+.searchPostImage {
+  max-width: 200px;
 }
