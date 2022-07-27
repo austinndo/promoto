@@ -37,6 +37,8 @@ router.patch('/post/edit/:id', controllers.updatePost)
 
 router.patch('/post/edit-genres/:id', controllers.updatePostGenres)
 
+router.patch('/user/edit/:id', controllers.updateUser)
+
 ////////-------- Delete --------////////
 
 router.delete('/song/:id', controllers.deleteSong)

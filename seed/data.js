@@ -84,13 +84,6 @@ const main = async () => {
       artist: 'Teriyaki Boyz',
       genre: ['Hip Hop', 'Japanese Old School'],
       cover: 'https://i.scdn.co/image/ab67616d0000b2738b660b58d947c1d666d635c0'
-    },
-    {
-      id: 12,
-      name: 'Song Example',
-      artist: 'Artist',
-      genre: ['Hip Hop', 'R&B'],
-      cover: 'https://i.scdn.co/image/ab67616d0000b2738b660b58d947c1d666d635c0'
     }
   ]
 
@@ -155,15 +148,6 @@ const main = async () => {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBZdDqHRgEqt3_4cfWGW8MspbUtaklgYb3cg&usqp=CAU',
       description:
         'Would not recommend trying to recreate the music video at home...',
-      likes: 0
-    },
-    {
-      songId: 1,
-      username: 'hateration',
-      title: 'holleration',
-      image:
-        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.De-bnV61-45mcOmwv5ds_gHaEM%26pid%3DApi&f=1',
-      description: `Test Post in this dancery`,
       likes: 0
     }
   ]
