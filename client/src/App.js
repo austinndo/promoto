@@ -5,23 +5,23 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 
 function App() {
-  const [songs, setSongs] = useState([])
-  const [newSong, setNewSong] = useState({
-    id: songs.length + 1,
-    name: '',
-    artist: '',
-    genre: [''],
-    cover: ''
-  })
+  // const [songs, setSongs] = useState([])
+  // const [newSong, setNewSong] = useState({
+  //   id: songs.length + 1,
+  //   name: '',
+  //   artist: '',
+  //   genre: [''],
+  //   cover: ''
+  // })
 
-  const [posts, setPosts] = useState([])
-  const [newPost, setNewPost] = useState({})
+  // const [posts, setPosts] = useState([])
+  // const [newPost, setNewPost] = useState({})
 
-  const [users, setUsers] = useState([])
-  const [newUser, setNewUser] = useState({})
+  // const [users, setUsers] = useState([])
+  // const [newUser, setNewUser] = useState({})
 
   return (
-    <div className="App">
+    <div className="Promoto">
       <Routes>
         <Route path="/promoto" element={<Home />} />
       </Routes>
