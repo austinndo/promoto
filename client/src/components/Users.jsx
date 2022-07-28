@@ -1,6 +1,10 @@
 const Users = (props) => {
 
-  return (
+  if(!props.users) {
+    return <h2> Checking tickets... </h2>
+  }
+
+  else return (
       <div className='searchUsersContainer'>
         {props.users.map((user) => (
         <div key={user._id} className="searchUsers">

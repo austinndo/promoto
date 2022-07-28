@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Nav from "../components/Nav"
 
 const Create = () => {
   
@@ -123,32 +124,34 @@ const Create = () => {
 
   return (
     <div className="Create">
-    <Link to="/">Back</Link>
-    <div className="addSongContainer">
-      <h1>Add Song #{nextSongId}</h1>
-        <form>
-        <input type="number" onChange={handleChangeSong} name={'id'} placeholder={'*song number, copy from above!'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'name'} placeholder={'*name'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'*artist'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'cover'} placeholder={'*cover art'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'genre'} placeholder={'*genre'} required/> <br></br>
-        <p> * indicates a required field</p> <br></br>
-        <button onClick={addSong}>Submit</button>
-        </form>
+      <div className="navbar">
+        < Nav />
       </div>
+        <div className="addSongContainer">
+        <h1>Add Song #{nextSongId}</h1>
+          <form>
+          <input type="number" onChange={handleChangeSong} name={'id'} placeholder={'*song number, copy from above!'} required/> <br></br>
+          <input type="text" onChange={handleChangeSong} name={'name'} placeholder={'*name'} required/> <br></br>
+          <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'*artist'} required/> <br></br>
+          <input type="text" onChange={handleChangeSong} name={'cover'} placeholder={'*cover art'} required/> <br></br>
+          <input type="text" onChange={handleChangeSong} name={'genre'} placeholder={'*genre'} required/> <br></br>
+          <p> * indicates a required field</p> <br></br>
+          <button onClick={addSong}>Submit</button>
+          </form>
+        </div>
 
-    <div className="createPostContainer">
-      <h1>Create a new post</h1>
-        <form>
-        <input type="number" onChange={handleChangePost} name={'songId'} placeholder={'*song id'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'username'} placeholder={'*username'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'title'} placeholder={'*title'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'image'} placeholder={'*image source'} required/> <br></br>
-        <input type="text-area" onChange={handleChangePost} name={'description'} placeholder={'description'} /> <br></br>
-        <p> * indicates a required field</p> <br></br>
-        <button onClick={addPost}>Submit</button>
-        </form>
-      </div>
+        <div className="createPostContainer">
+        <h1>Create a new post</h1>
+          <form>
+          <input type="number" onChange={handleChangePost} name={'songId'} placeholder={'*song id'} required/> <br></br>
+          <input type="text" onChange={handleChangePost} name={'username'} placeholder={'*username'} required/> <br></br>
+          <input type="text" onChange={handleChangePost} name={'title'} placeholder={'*title'} required/> <br></br>
+          <input type="text" onChange={handleChangePost} name={'image'} placeholder={'*image source'} required/> <br></br>
+          <input type="text-area" onChange={handleChangePost} name={'description'} placeholder={'description'} /> <br></br>
+          <p> * indicates a required field</p> <br></br>
+          <button onClick={addPost}>Submit</button>
+          </form>
+          </div>
     </div>
   );
 }

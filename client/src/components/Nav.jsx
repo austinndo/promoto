@@ -10,8 +10,8 @@ const Nav = () => {
         <Link to="/promoto/search">Search</Link>
         <Link to="/promoto/spotlight">Spotlight</Link>
         <Link to="/promoto/add">Add</Link>
-        <Link to="/promoto/login">Login</Link>
         <Link to="/promoto/edit">Edit</Link>
+        <Link to="/promoto/login">Login</Link>
       </div>
     </nav>
   )

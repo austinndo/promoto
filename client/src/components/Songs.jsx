@@ -1,7 +1,7 @@
 const Songs = (props) => {
 
   if(!props.songs) {
-    return <h2> Songs are late to the gig... </h2>
+    return <h2> Preparing the setlist... </h2>
   }
 
   else return (

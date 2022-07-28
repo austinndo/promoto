@@ -3,19 +3,12 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import Nav from "../../components/Nav"
-import EditPost from "../../components/edit/EditPost"
+import EditPost from "./EditPost"
 
 
 const EditPostPage = () => {
 
   let navigate = useNavigate()
-
-  //------------------------ Set state ------------------------//
-
-  //1. search for song by id
-  //2. display song through component. component will have button that links to edit page
-  //3. pass song data as props to edit page, display edit page with form
-  //4. same form handler logic as create... and run update on button click
 
   const [posts, setPosts] = useState([])
   const [postId, setPostId] = useState("")
@@ -53,16 +46,6 @@ const EditPostPage = () => {
       </div>
     </div>
   )
-
-
-
-
-
-
-
-
-
-
 
 }
 

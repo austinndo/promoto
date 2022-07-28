@@ -7,6 +7,7 @@ const EditSongPage = () => {
 
   let navigate = useNavigate()
 
+  const [songs, setSongs] = useState([])
   const [songId, setSongId] = useState({id: 0})
   const [newSong, setNewSong] = useState([{ 
     name: '',
@@ -14,6 +15,14 @@ const EditSongPage = () => {
     genre: [''],
     cover: '',
   }])
+
+  useEffect(() => {
+    const getSongs = async () => {
+      const songs = await axios.get('http://localhost:3001/songs')
+      setSongs(songs.data.songs)
+    }
+    getSongs()
+  }, [])
 
   const updateSong = (e) => {
     e.preventDefault()
@@ -63,6 +72,16 @@ const EditSongPage = () => {
         <p> * indicates a required field</p> <br></br>
         <button onClick={updateSong}>Submit</button>
         </form>
+      </div>
+
+      <div className='searchSongsContainer'>
+        {songs.map((song) => (
+        <div key={song.id} className="searchSongs">
+        <img className="songCover" src={song.cover} alt="album-cover"/>
+        <h2>"{song.name}"</h2>
+        <h3>{song.artist}</h3>
+        <h4>Song #{song.id}</h4>
+        </div>))}
       </div>
     
     </div>

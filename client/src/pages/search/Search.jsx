@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import musicRecord from '../assets/musicRecord.png'
-import postIcon from '../assets/postIcon.png'
-import userIcon from '../assets/userIcon.png'
+import musicRecord from '../../assets/musicRecord.png'
+import postIcon from '../../assets/postIcon.png'
+import userIcon from '../../assets/userIcon.png'
 
 const Search = () => {
 

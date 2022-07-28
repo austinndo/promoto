@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Nav from "../components/Nav"
-import Posts from '../components/Posts'
+import Posts from '../../components/Posts'
+import SearchedNav from '../../components/SearchedNav'
 
-const Home = () => {
+
+const SearchPosts = () => {
 
   const [posts, setPosts] = useState([])
 
@@ -16,17 +17,14 @@ const Home = () => {
   }, [])
 
   return (
-
-    <div className="home">
-      <div className="navbar">
-        < Nav />
-      </div>
-      
-      <div className="homePagePosts">
-        < Posts posts={posts}/>
+    <div>
+      <SearchedNav />
+      <div>
+        <Posts posts={posts} />
       </div>
     </div>
   )
+
 }
 
-export default Home
+export default SearchPosts
