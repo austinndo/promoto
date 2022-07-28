@@ -6,7 +6,7 @@ const SearchedNav = () => {
     <nav className="searchedNavbar">
       <h2 style={ {color: "black"} }>Search</h2>
       <div className='searchedNavbarLinks'>
-        <Link to="/promoto">Back</Link>
+        <Link to="/">Back</Link>
         <Link to="/promoto/search/songs">Songs</Link>
         <Link to="/promoto/search/posts">Posts</Link>
         <Link to="/promoto/search/users">Users</Link>

@@ -121,14 +121,15 @@ const Create = (props) => {
 
   return (
     <div className="Create">
-    <Link to="/promoto">Back</Link>
+    <Link to="/">Back</Link>
     <div className="addSongContainer">
       <h1>Add a new song</h1>
         <form>
-        <input type="text" onChange={handleChangeSong} name={'name'} placeholder={'name'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'artist'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'cover'} placeholder={'cover art'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'genre'} placeholder={'genre'} required/> <br></br>
+        <input type="text" onChange={handleChangeSong} name={'name'} placeholder={'*name'} required/> <br></br>
+        <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'*artist'} required/> <br></br>
+        <input type="text" onChange={handleChangeSong} name={'cover'} placeholder={'*cover art'} required/> <br></br>
+        <input type="text" onChange={handleChangeSong} name={'genre'} placeholder={'*genre'} required/> <br></br>
+        <p> * indicates a required field</p> <br></br>
         <button onClick={addSong}>Submit</button>
         </form>
       </div>
@@ -136,11 +137,12 @@ const Create = (props) => {
     <div className="createPostContainer">
       <h1>Create a new post</h1>
         <form>
-        <input type="text" onChange={handleChangePost} name={'songId'} placeholder={'songId'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'username'} placeholder={'username'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'title'} placeholder={'title'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'image'} placeholder={'img src'} required/> <br></br>
+        <input type="text" onChange={handleChangePost} name={'songId'} placeholder={'*song id'} required/> <br></br>
+        <input type="text" onChange={handleChangePost} name={'username'} placeholder={'*username'} required/> <br></br>
+        <input type="text" onChange={handleChangePost} name={'title'} placeholder={'*title'} required/> <br></br>
+        <input type="text" onChange={handleChangePost} name={'image'} placeholder={'*image source'} required/> <br></br>
         <input type="text" onChange={handleChangePost} name={'description'} placeholder={'description'} /> <br></br>
+        <p> * indicates a required field</p> <br></br>
         <button onClick={addPost}>Submit</button>
         </form>
       </div>

@@ -3,149 +3,104 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Edit = (props) => {
+import Nav from "../components/Nav"
+import EditPost from "../components/edit/EditPost"
+import EditSong from "../components/edit/EditSong"
+
+const Edit = () => {
   
   let navigate = useNavigate()
 
   //------------------------ Set state ------------------------//
 
+  //1. search for song by id
+  //2. display song through component. component will have button that links to edit page
+  //3. pass song data as props to edit page, display edit page with form
+  //4. same form handler logic as create... and run update on button click
+
   const [songs, setSongs] = useState([])
-  const [newSong, setNewSong] = useState({
-    id: songs.length + 1,
-    name: '',
-    artist: '',
-    genre: [''],
-    cover: '',
-    //Posts will be empty array
-    posts: ['']
-  })
-
   const [posts, setPosts] = useState([])
-  const [newPost, setNewPost] = useState({
-      songId: '',
-      username: '',
-      title: '',
-      image:
-        '',
-      description:
-        '',
-      likes: 0
-  })
-
+  
   useEffect(() => {
     const getPosts = async () => {
       const posts = await axios.get('http://localhost:3001/posts')
-
       setPosts(posts.data.posts)
     }
     getPosts()
-    console.log(posts)
   }, [])
 
   useEffect(() => {
     const getSongs = async () => {
       const songs = await axios.get('http://localhost:3001/songs')
-
       setSongs(songs.data.songs)
     }
     getSongs()
-    console.log(songs)
   }, [])
 
- //------------------------ Functions to Update Database ------------------------//
+  const [songId, setSongId] = useState("")
+  const [postId, setPostId] = useState("")
 
-  const addPost = async (e) => {
-    e.preventDefault()
-    setNewPost({ ...newPost, [e.target.name]: e.target.value })
+  const [selectedSong, setSelectedSong] = useState([])
+  const [selectedPost, setSelectedPost] = useState([])
 
-    const createdPost = {
-      ...newPost
-    }
-    
-    await axios({
-      method: 'post',
-      url: 'http://localhost:3001/post',
-      data: createdPost
-    })
+  useEffect(() => {
 
-    posts.push(createdPost)
-    setPosts(posts)
-    setNewPost({ 
-      songId: '',
-      username: '',
-      title: '',
-      image: '',
-      description: '',
-      likes: 0 })
+    // if (songId != songs.map((song) => song.id)) { 
+    //   return alert(`Song does not exist`) }
 
-    navigate('/promoto')
-  }
+    // else if (songId == songs.map((song) => song.id )) {
+      const setSong = async () => {
+        const song = await axios.get(`http://localhost:3001/song/${songId}`)
+        console.log(song)
+        setSelectedSong(song.data.songs)}
+        console.log(selectedSong)
+        setSong()
 
-  const addSong = async (e) => {
-    e.preventDefault()
-    setNewSong({ ...newSong, [e.target.name]: e.target.value })
-    const createdSong = {
-      ...newSong
-    }
+  }, [songId])
 
-    await axios({
-      method: 'post',
-      url: 'http://localhost:3001/song',
-      data: createdSong
-    }) 
-
-    songs.push(createdSong)
-    setSongs(songs)
-    setNewSong({ 
-      id: songs.length + 1,
-      name: '',
-      artist: '',
-      genre: [''],
-      cover: '',
-      //Posts will be empty array
-      posts: [''] })
-
-      navigate('/promoto')
-  }
+  useEffect(() => {
+    //render post card of id = postId
+  }, [postId])
 
   //------------------------ Form handlers ------------------------//
 
-  const handleChangeSong = (e) => {
-    setNewSong({ ...newSong, [e.target.name]: e.target.value })
+  const handleChangeSongId = (e) => {
+    setSongId({ songId, [e.target.name]: e.target.value })
   }
 
-  const handleChangePost = (e) => {
-    setNewPost({ ...newPost, [e.target.name]: e.target.value })
-    console.log(newPost)
+  const handleChangePostId = (e) => {
+    setPostId({ postId, [e.target.name]: e.target.value })
+  }
+
+  const goEditSong = (e) => {
+    navigate("/promoto/edit/song")
   }
 
   return (
-    <div className="Edit">
-    <Link to="/promoto">Back</Link>
-    <div className="addSongContainer">
-      <h1>Edit a Song</h1>
-        <form>
-        <input type="text" onChange={handleChangeSong} name={'name'} placeholder={'name'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'artist'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'cover'} placeholder={'cover art'} required/> <br></br>
-        <input type="text" onChange={handleChangeSong} name={'genre'} placeholder={'genre'} required/> <br></br>
-        <button onClick={addSong}>Submit</button>
-        </form>
+    <div>
+      <div className="navbar">
+        < Nav />
       </div>
 
-    <div className="createPostContainer">
-      <h1>Edit a Post</h1>
-        <form>
-        <input type="text" onChange={handleChangePost} name={'songId'} placeholder={'songId'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'username'} placeholder={'username'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'title'} placeholder={'title'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'image'} placeholder={'img src'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'description'} placeholder={'description'} /> <br></br>
-        <button onClick={addPost}>Submit</button>
-        </form>
+      <div className='Edit'>
+        <div className="editSelectSongIdForm">
+          <form>
+              <input type="number" onChange={handleChangeSongId} name={'id'} placeholder={"*Song Id Number"} required /> <br></br>
+              <button onClick={goEditSong}>Select Song</button>
+          </form>
+        </div>
+
+        <div className="editSelectPostIdForm">
+          <form>
+            <input type="text" onChange={handleChangePostId} name={'id'} placeholder={"*Post Id Number"} required /> <br></br>
+            <button>Select Post</button>
+          </form>
+        </div>
+        < EditSong selectedSong={selectedSong}/>
+        < EditPost postId={postId} selectedPost={selectedPost} />
       </div>
     </div>
-  );
+  )
 }
 
 export default Edit

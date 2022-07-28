@@ -16,7 +16,7 @@ router.get('/', (req, res) => res.send('Arrived at the Promoto root!'))
 
 router.get('/songs', controllers.getSongs)
 
-router.get('/song/id/:id', controllers.getSongById)
+router.get('/song/:id', controllers.getSongById)
 
 router.get('/posts', controllers.getPosts)
 

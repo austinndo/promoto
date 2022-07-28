@@ -13,14 +13,15 @@
   background-color: rgb(80, 80, 80);
   padding: 1em;
   min-height: 2em;
+  width: 100vw;
 }
 
 .postCardContainer {
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(1, minmax(250px, 1fr));
   grid-gap: 8em;
   padding: 12em;
-  width: max-content;
 }
 
 .postCard {
@@ -42,7 +43,9 @@
 }
 
 .postCardImage {
-  min-height: 40px;
+  justify-content: center;
+  align-self: center;
+  width: 60%;
 }
 
 .spotlight {
