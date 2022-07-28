@@ -4,14 +4,16 @@ import Home from './pages/Home'
 import Search from './pages/Search'
 import Spotlight from './pages/Spotlight'
 import Login from './pages/Login'
-import Edit from './pages/Edit'
+import Edit from './pages/edit/Edit'
+import EditSongPage from './pages/edit/EditSongPage'
+import EditPostPage from './pages/edit/EditPostPage'
+import DeleteSongPage from './pages/edit/DeleteSongPage'
+import DeletePostPage from './pages/edit/DeletePostPage'
 
-import Songs from './components/search/Songs'
-import Posts from './components/search/Posts'
-import Users from './components/search/Users'
+import Songs from './components/Songs'
+import Posts from './components/Posts'
+import Users from './components/Users'
 import Create from './components/Create'
-import EditSong from './components/edit/EditSong'
-import EditPost from './components/edit/EditPost'
 
 function App() {
   return (
@@ -26,8 +28,10 @@ function App() {
         <Route path="/promoto/add" element={<Create />} />
         <Route path="/promoto/login" element={<Login />} />
         <Route path="/promoto/edit" element={<Edit />} />
-        <Route path="/promoto/edit/song" element={<EditSong />} />
-        <Route path="/promoto/edit/post" element={<EditPost />} />
+        <Route path="/promoto/edit/song" element={<EditSongPage />} />
+        <Route path="/promoto/edit/post" element={<EditPostPage />} />
+        <Route path="/promoto/delete/song" element={<DeleteSongPage />} />
+        <Route path="/promoto/delete/post" element={<DeletePostPage />} />
       </Routes>
     </div>
   )

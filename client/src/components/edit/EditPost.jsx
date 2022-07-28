@@ -65,7 +65,7 @@ return (
         <input type="text" onChange={handleChange} value={props.username} name={'username'} placeholder={'username'} required/> <br></br>
         <input type="text" onChange={handleChange} value={props.title} name={'title'} placeholder={'title'} required/> <br></br>
         <input type="text" onChange={handleChange} value={props.image} name={'image'} placeholder={'img src'} required/> <br></br>
-        <input type="text" onChange={handleChange} value={props.description} name={'description'} placeholder={'description'} /> <br></br>
+        <input type="text-area" onChange={handleChange} value={props.description} name={'description'} placeholder={'description'} /> <br></br>
         <button onClick={updatePost}>Submit</button>
         </form>
       </div>

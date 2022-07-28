@@ -29,7 +29,6 @@ router.get('/users', controllers.getUsers)
 router.get('/users/:id', controllers.getUserById)
 
 ////////-------- Update --------////////
-//put vs patch ?? for genre update?
 
 router.patch('/song/edit/:id', controllers.updateSong)
 

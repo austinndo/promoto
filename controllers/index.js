@@ -101,14 +101,10 @@ const getUserById = async (req, res) => {
 
 //------------ Update ------------//
 
-//consider using the ids saved in the database we created manually
 const updateSong = async (req, res) => {
   try {
-    const songId = req.params.objectId
-    const updatedSong = await Song.updateOne(req.body, {
-      where: { _id: songId },
-      returning: true
-    })
+    const songId = req.params.id
+    const updatedSong = await Song.findOneAndUpdate({ id: songId }, req.body)
     res.send(updatedSong)
   } catch (error) {
     throw error
@@ -164,7 +160,7 @@ const updateUser = async (req, res) => {
 const deleteSong = async (req, res) => {
   try {
     const songId = req.params.id
-    await Song.findByIdAndDelete({ _id: songId })
+    await Song.findOneAndDelete({ id: songId })
     res.send({ msg: `Song of id: ${songId} deleted` })
   } catch (error) {
     throw error
@@ -217,19 +213,3 @@ module.exports = {
   deletePost,
   deleteUser
 }
-
-//////----------Notes from Router and Controller Review------------////////////
-
-//create Index / List route
-//getObjects
-
-//create Details / Show route
-//getObjectById
-// const getObjectById = async (req, res) => {
-//   try {
-//     const object = await Object.findById(req.params.id)
-// return res.status(200).json({object}) || res.send(object)
-//   } catch (error) {
-//     throw error
-//   }
-// }

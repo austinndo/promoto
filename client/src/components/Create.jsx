@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Create = (props) => {
+const Create = () => {
   
   let navigate = useNavigate()
 
@@ -11,12 +11,11 @@ const Create = (props) => {
 
   const [songs, setSongs] = useState([])
   const [newSong, setNewSong] = useState({
-    id: songs.length + 1,
+    id: 0,
     name: '',
     artist: '',
     genre: [''],
     cover: '',
-    //Posts will be empty array
     posts: ['']
   })
 
@@ -50,9 +49,37 @@ const Create = (props) => {
     }
     getSongs()
     console.log(songs)
+    console.log(newSong)
   }, [])
 
  //------------------------ Functions to Update Database ------------------------//
+
+ const addSong = async (e) => {
+  e.preventDefault()
+  setNewSong({ ...newSong, [e.target.name]: e.target.value })
+  const createdSong = {
+    ...newSong
+  }
+
+  await axios({
+    method: 'post',
+    url: 'http://localhost:3001/song',
+    data: createdSong
+  }) 
+
+  songs.push(createdSong)
+  setSongs(songs)
+  setNewSong({ 
+    id: songs.length + 1,
+    name: '',
+    artist: '',
+    genre: [''],
+    cover: '',
+    //Posts will be empty array
+    posts: [''] })
+
+    navigate('/promoto/search/songs')
+}
 
   const addPost = async (e) => {
     e.preventDefault()
@@ -78,53 +105,29 @@ const Create = (props) => {
       description: '',
       likes: 0 })
 
-    navigate('/promoto')
-  }
-
-  const addSong = async (e) => {
-    e.preventDefault()
-    setNewSong({ ...newSong, [e.target.name]: e.target.value })
-    const createdSong = {
-      ...newSong
-    }
-
-    await axios({
-      method: 'post',
-      url: 'http://localhost:3001/song',
-      data: createdSong
-    }) 
-
-    songs.push(createdSong)
-    setSongs(songs)
-    setNewSong({ 
-      id: songs.length + 1,
-      name: '',
-      artist: '',
-      genre: [''],
-      cover: '',
-      //Posts will be empty array
-      posts: [''] })
-
-      navigate('/promoto')
+    navigate('/')
   }
 
   //------------------------ Form handlers ------------------------//
 
   const handleChangeSong = (e) => {
     setNewSong({ ...newSong, [e.target.name]: e.target.value })
+    console.log(newSong)
   }
 
   const handleChangePost = (e) => {
     setNewPost({ ...newPost, [e.target.name]: e.target.value })
-    console.log(newPost)
   }
+
+  const nextSongId = songs.length + 1
 
   return (
     <div className="Create">
     <Link to="/">Back</Link>
     <div className="addSongContainer">
-      <h1>Add a new song</h1>
+      <h1>Add Song #{nextSongId}</h1>
         <form>
+        <input type="number" onChange={handleChangeSong} name={'id'} placeholder={'*song number, copy from above!'} required/> <br></br>
         <input type="text" onChange={handleChangeSong} name={'name'} placeholder={'*name'} required/> <br></br>
         <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'*artist'} required/> <br></br>
         <input type="text" onChange={handleChangeSong} name={'cover'} placeholder={'*cover art'} required/> <br></br>
@@ -137,11 +140,11 @@ const Create = (props) => {
     <div className="createPostContainer">
       <h1>Create a new post</h1>
         <form>
-        <input type="text" onChange={handleChangePost} name={'songId'} placeholder={'*song id'} required/> <br></br>
+        <input type="number" onChange={handleChangePost} name={'songId'} placeholder={'*song id'} required/> <br></br>
         <input type="text" onChange={handleChangePost} name={'username'} placeholder={'*username'} required/> <br></br>
         <input type="text" onChange={handleChangePost} name={'title'} placeholder={'*title'} required/> <br></br>
         <input type="text" onChange={handleChangePost} name={'image'} placeholder={'*image source'} required/> <br></br>
-        <input type="text" onChange={handleChangePost} name={'description'} placeholder={'description'} /> <br></br>
+        <input type="text-area" onChange={handleChangePost} name={'description'} placeholder={'description'} /> <br></br>
         <p> * indicates a required field</p> <br></br>
         <button onClick={addPost}>Submit</button>
         </form>

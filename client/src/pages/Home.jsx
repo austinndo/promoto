@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from "../components/Nav"
 import HomePostsList from "../components/HomePostsList"
+import Posts from '../components/Posts'
 
 const Home = () => {
 
@@ -15,9 +16,6 @@ const Home = () => {
     getPosts()
   }, [])
 
-
-
-
   return (
 
     <div className="home">
@@ -25,7 +23,7 @@ const Home = () => {
         < Nav />
       </div>
       <div className="homePagePosts">
-        < HomePostsList posts={posts}/>
+        < Posts posts={posts}/>
       </div>
     </div>
   )
