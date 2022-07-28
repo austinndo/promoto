@@ -5,14 +5,14 @@ const Songs = (props) => {
   }
 
   else return (
-    <div>
+    <div className="songsContainer">
         {props.songs.map((song) => (
-        <div key={song.id} className="searchSongs">
-        <img className="songCover" src={song.cover} alt="album-cover"/>
+        <div key={song.id} className="songsContainerContent">
+        <img className="songContainerCover" src={song.cover} alt="album-cover"/>
         <h2>"{song.name}"</h2>
         <h4>{song.artist}</h4>
         </div>))}
-      </div>
+    </div>
   )
 }
 

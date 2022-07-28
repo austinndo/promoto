@@ -5,13 +5,13 @@ const Post = (props) => {
   }
 
   else return (
-    <div>
-        {props.posts.map((post) => (
-        <div key={post._id} className="searchPosts">
-        <img className="searchPostImage" src={post.image} alt="post-content"/>
-        <h4>{post.username}</h4>
-        <h5>Likes: {post.likes}</h5>
-        <h5>{post.description}</h5>
+    <div className="postsContainer">
+      {props.posts.map((post) => (
+      <div key={post._id} className="postsContainerContent">
+      <img className="postContainerImage" src={post.image} alt="post-content"/>
+      <h4>{post.username}</h4>
+      <h5>Likes: {post.likes}</h5>
+      <h5>{post.description}</h5>
       </div>))}
     </div>
   )

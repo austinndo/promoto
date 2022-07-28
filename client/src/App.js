@@ -13,6 +13,7 @@ import EditPostPage from './pages/edit/EditPostPage'
 import DeleteSongPage from './pages/edit/DeleteSongPage'
 import DeletePostPage from './pages/edit/DeletePostPage'
 import Create from './pages/Create'
+import Signup from './pages/Signup'
 
 function App() {
   return (
@@ -25,12 +26,13 @@ function App() {
         <Route path="/promoto/search/users" element={<SearchUsers />} />
         <Route path="/promoto/spotlight" element={<Spotlight />} />
         <Route path="/promoto/add" element={<Create />} />
-        <Route path="/promoto/login" element={<Login />} />
         <Route path="/promoto/edit" element={<Edit />} />
         <Route path="/promoto/edit/song" element={<EditSongPage />} />
         <Route path="/promoto/edit/post" element={<EditPostPage />} />
         <Route path="/promoto/delete/song" element={<DeleteSongPage />} />
         <Route path="/promoto/delete/post" element={<DeletePostPage />} />
+        <Route path="/promoto/login" element={<Login />} />
+        <Route path="/promoto/signup" element={<Signup />} />
       </Routes>
     </div>
   )

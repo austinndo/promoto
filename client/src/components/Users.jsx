@@ -5,9 +5,9 @@ const Users = (props) => {
   }
 
   else return (
-      <div className='searchUsersContainer'>
+      <div className='usersContainer'>
         {props.users.map((user) => (
-        <div key={user._id} className="searchUsers">
+        <div key={user._id} className="usersContainerContent">
         <h4>{user.username}</h4>
         <h5>Favorite Genres: {user.favoriteGenres}</h5>
         </div>))}
