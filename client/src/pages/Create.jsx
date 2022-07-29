@@ -106,7 +106,7 @@ const Create = () => {
       description: '',
       likes: 0 })
 
-    navigate('/')
+    navigate('/promoto/search/posts')
   }
 
   //------------------------ Form handlers ------------------------//
