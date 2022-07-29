@@ -1,7 +1,4 @@
 import { Link } from 'react-router-dom'
-import musicRecord from '../assets/musicRecord.png'
-import postIcon from '../assets/postIcon.png'
-import userIcon from '../assets/userIcon.png'
 
 const SearchedNav = () => {
   
@@ -11,22 +8,22 @@ const SearchedNav = () => {
         <h2>Search</h2>
       </div>
 
-      <div className='searchedNavbarLinks'>
-        <Link to="/promoto">Home</Link> <br></br>
-        
-        <h2>Songs:</h2>
+      <div className='searchNavbarHome'>
+        <Link to="/promoto">Back Home</Link>
+      </div>
+
+      <div className='searchNavbarLinks'>
+
         <Link to="/promoto/search/songs">
-          <img className='musicRecordIcon' src={musicRecord} alt="music-record" />
+        <i class="fa fa-music fa-2x" aria-hidden="true"></i>
         </Link>
         
-        <h2>Posts:</h2>
         <Link to="/promoto/search/posts">
-          <img className='postIcon' src={postIcon} alt="post-icon" />
+        <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
         </Link>
 
-        <h2>Users:</h2>
         <Link to="/promoto/search/users">
-          <img className='userIcon' src={userIcon} alt="user-icon" />
+        <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
         </Link>
       </div>
     </nav>

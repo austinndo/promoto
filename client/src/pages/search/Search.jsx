@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom'
-import musicRecord from '../../assets/musicRecord.png'
-import postIcon from '../../assets/postIcon.png'
-import userIcon from '../../assets/userIcon.png'
-import Nav from '../../components/Nav'
+
 
 const Search = () => {
 
@@ -16,17 +13,17 @@ const Search = () => {
     <div className='search'>
       <div>
       <h2>Songs</h2> <br></br>
-      <Link to="/promoto/search/songs"><img className='musicRecordIcon' src={musicRecord} alt="music-record" /></Link>
+      <Link to="/promoto/search/songs"><i class="fa fa-music fa-3x" aria-hidden="true"></i></Link>
       </div>
 
       <div>
       <h2>Posts</h2> <br></br>
-      <Link to="/promoto/search/posts"><img className='postIcon' src={postIcon} alt="post-icon" /></Link>
+      <Link to="/promoto/search/posts"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></Link>
       </div>
 
       <div>
       <h2>Users</h2> <br></br>
-      <Link to="/promoto/search/users"><img className='userIcon' src={userIcon} alt="user-icon" /></Link>
+      <Link to="/promoto/search/users"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></Link>
       </div>
     </div>
   </div>

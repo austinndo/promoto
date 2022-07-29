@@ -48,7 +48,57 @@ Apply to Everything
   width: 100vw;
 }
 
+.navbarTitle {
+  display: flex;
+  margin-left: 2rem;
+  font-size: 1rem;
+}
 
+.navbarLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.searchNavbar {
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(28, 50, 80);
+  background-color: rgba(15, 32, 57, 0.443);
+  width: 100vw;
+}
+
+.searchNavbarTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.searchNavbarHome {
+  display: flex;
+  justify-content: center;
+}
+
+.searchNavbarLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ---------------------------------------------------------- Home Page Posts ---------------------------------------------------------- */
+
+.postsContainer {
+  display: grid;
+}
+
+.postContainerUsernameLikes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .postCardContainer {
   display: grid;
@@ -117,18 +167,10 @@ Apply to Everything
   background-color: rgb(99, 99, 99);
 }
 
-.searchPostImage {
-  max-width: 200px;
-}
 
-.Create {
-  min-height: 100vh;
-  color: white;
-}
 
-.searchedNavbar {
-  display: grid;
-  grid-template-rows: repeat(3);
-}
+
+
+
 
 
