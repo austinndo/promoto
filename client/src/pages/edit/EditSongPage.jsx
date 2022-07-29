@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Nav from "../../components/Nav"
+import { Link } from 'react-router-dom'
 
 const EditSongPage = () => {
 
@@ -56,14 +56,16 @@ const EditSongPage = () => {
     }
 
   return (
-    <div>
-      <div className="navbar">
-        < Nav />
+    <div className="editSongPage">
+      <div className="editSongPageTitle">
+       <h1>Edit Song</h1>
+      </div>
+      <div className="backToEdit">
+        < Link to="/promoto/edit">Back</Link>
       </div>
 
       <div className="updateSongContainer">
-      <h1>Edit Song</h1>
-        <form>
+        <form className="updateSongForm">
         <input type="number" onChange={handleChange} name={'id'} placeholder={"*Song Id Number"} required /> <br></br>
         <input type="text" onChange={handleChange} name={'name'} placeholder={'name'} /> <br></br>
         <input type="text" onChange={handleChange} name={'artist'} placeholder={'artist'} /> <br></br>
@@ -74,13 +76,13 @@ const EditSongPage = () => {
         </form>
       </div>
 
-      <div className='searchSongsContainer'>
+      <div className='editSongsContainer'>
         {songs.map((song) => (
-        <div key={song.id} className="searchSongs">
-        <img className="songCover" src={song.cover} alt="album-cover"/>
-        <h2>"{song.name}"</h2>
-        <h3>{song.artist}</h3>
-        <h4>Song #{song.id}</h4>
+        <div key={song.id} className="editSongsContainerContent">
+        <img className="editSongContainerCover" src={song.cover} alt="album-cover"/>
+        <h2>Song #{song.id}</h2>
+        <h4>"{song.name}"</h4>
+        <h4>{song.artist}</h4>
         </div>))}
       </div>
     

@@ -4,8 +4,8 @@ import Nav from "../../components/Nav"
 const Edit = () => {
 
   return (
-    <div>
-      <div className="navbar">
+    <div className='Edit'>
+      <div className="editNavbar">
         < Nav />
       </div>
 
