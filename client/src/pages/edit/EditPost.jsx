@@ -56,7 +56,7 @@ const handleChange = (e) => {
 
 return (
 <div>
-    <Link to="/">Home</Link>
+    <Link to="/promoto">Home</Link>
 
     <div className="createPostContainer">
       <h1>Edit a Post</h1>

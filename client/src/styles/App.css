@@ -1,12 +1,22 @@
 .Promoto {
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  justify-content: center;
   background: linear-gradient(rgb(8, 8, 60), rgba(28, 28, 28, 0.802));
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: auto;
 }
 
-.navbar {
+.landingPage {
+  background-color: blueviolet;
+}
+
+.login {
+  color: white
+}
+
+/* text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+/* .navbar {
   justify-content: space-between;
   align-items: center;
   color: #b2adad;
@@ -103,6 +113,6 @@
 .searchedNavbar {
   display: grid;
   grid-template-rows: repeat(3);
-}
+} */
 
 

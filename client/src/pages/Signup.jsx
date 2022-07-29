@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import axios from "axios"
-import Nav from "../components/Nav"
 
 const Signup = () => {
   
   let navigate = useNavigate()
-
 
   const [users, setUsers] = useState([])
   const [newUser, setNewUser] = useState({
@@ -26,11 +25,7 @@ const Signup = () => {
     getUsers()
   }, [])
 
-
-
- //------------------------ Functions to Update Database ------------------------//
-
- const addUser = async (e) => {
+  const addUser = async (e) => {
   e.preventDefault()
   setNewUser({ ...newUser, [e.target.name]: e.target.value })
   const user = {
@@ -56,16 +51,13 @@ const Signup = () => {
     navigate('/promoto/search/users')
 }
 
-
   const handleChange = (e) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value })
   }
 
   return (
-    <div className="Create">
-      <div className="navbar">
-        < Nav />
-      </div>
+    <div className="signupPage">
+      <Link to="/">Back to Login</Link>
         <div className="signup">
         <h1>Account Details</h1>
           <form>
@@ -78,7 +70,6 @@ const Signup = () => {
           <button onClick={addUser}>Signup</button>
           </form>
         </div>
-
     </div>
   )
 }
