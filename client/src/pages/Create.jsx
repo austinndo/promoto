@@ -124,9 +124,10 @@ const Create = () => {
 
   return (
     <div className="Create">
-      <div className="navbar">
+      <div className="homeNavbar">
         < Nav />
       </div>
+      <div className="createFormContainers">
         <div className="addSongContainer">
         <h1>Add Song #{nextSongId}</h1>
           <form>
@@ -135,8 +136,8 @@ const Create = () => {
           <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'*artist'} required/> <br></br>
           <input type="text" onChange={handleChangeSong} name={'cover'} placeholder={'*cover art'} required/> <br></br>
           <input type="text" onChange={handleChangeSong} name={'genre'} placeholder={'*genre'} required/> <br></br>
-          <p> * indicates a required field</p> <br></br>
-          <button onClick={addSong}>Submit</button>
+          <p> * indicates a required field</p>
+          <button onClick={addSong} >Submit</button>
           </form>
         </div>
 
@@ -148,10 +149,11 @@ const Create = () => {
           <input type="text" onChange={handleChangePost} name={'title'} placeholder={'*title'} required/> <br></br>
           <input type="text" onChange={handleChangePost} name={'image'} placeholder={'*image source'} required/> <br></br>
           <input type="text-area" onChange={handleChangePost} name={'description'} placeholder={'description'} /> <br></br>
-          <p> * indicates a required field</p> <br></br>
+          <p> * indicates a required field</p>
           <button onClick={addPost}>Submit</button>
           </form>
           </div>
+        </div>
     </div>
   );
 }

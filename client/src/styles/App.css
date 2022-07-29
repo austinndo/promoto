@@ -3,7 +3,7 @@ Apply to Everything
 .Promoto {} */
 
 /* ---------------------------------------------------------- Landing Page ---------------------------------------------------------- */
-.landingPage {
+.landingPage, .Create {
   background-image: url("../assets/sunset.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -145,6 +145,50 @@ Apply to Everything
   width: 100%;
 }
 
+/* -- CSS for Posts in search and edit - */
+
+.searchPostsContainer {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-gap: 8em;
+  margin: 0 12em 0 12em ;
+}
+
+.searchPostContainerUsernameLikes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.searchPostUsername {
+  padding-left: 10%
+}
+
+.searchPostLikes {
+  padding-right: 10%;
+}
+
+.searchPostsContainerContent {
+  border-radius: 4px;
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.3);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  background-color: rgba(15, 32, 57, 0.28);
+  width: 60% max-content;
+  margin: 4em 0 4em 0;
+  border: double transparent rgb(28, 50, 80)
+}
+
+.searchPostContainerImage {
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+}
+
 /* ---------------------------------------------------------- Search ---------------------------------------------------------- */
 
 .search {
@@ -176,11 +220,7 @@ Apply to Everything
   padding-top: 5rem;
 }
 
-.spotlight {
-  background-image: url(https://c4.wallpaperflare.com/wallpaper/855/629/176/music-concerts-wallpaper-preview.jpg);
-  min-height: max-content;
-  min-width: max-content;
-}
+/* ---------------------------------------------------------- Songs ---------------------------------------------------------- */
 
 .songsContainer {
   display: grid;
@@ -188,6 +228,13 @@ Apply to Everything
   grid-template-columns: repeat(3, minmax(250px, 1fr));
   grid-gap: 8em;
   padding: 12em;
+} 
+
+.songsContainerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .songContainerCover {
@@ -202,20 +249,98 @@ Apply to Everything
   max-width: 280px;
 }
 
-.searchPostsContainer {
+
+/* ---------------------------------------------------------- Users ---------------------------------------------------------- */
+
+.usersContainer {
   display: grid;
-  justify-content: center;
+  align-items: center;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
   grid-gap: 8em;
   padding: 12em;
-  max-width: 50em;
-  background-color: rgb(99, 99, 99);
 }
 
+.usersContainerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+/* ---------------------------------------------------------- Spotlight ---------------------------------------------------------- */
 
+.Spotlight {
+  background: url("../assets/sunset-2.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
 
+.spotlightNavbar {  justify-content: space-between;
+  align-items: center;
+  color: rgb(28, 50, 80);
+  background-color: rgba(15, 32, 57, 0.28);
+  width: 100vw;
+  padding-bottom: 1rem;
+}
 
+.spotlight {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-gap: 8em;
+    padding: 12em;
+    color:lavender
+  }
 
+.spotlightHeader {
+  display: flex;
+  justify-content: center;
+  color: lavender;
+  font-size: x-large;
+  padding: 2rem 0 0 0;
+}
 
+.songList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* ---------------------------------------------------------- Create / Add Page ---------------------------------------------------------- */
+
+.createFormContainers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addSongContainer {
+  border-radius: 4px;
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(15, 32, 57, 0.28);
+  border: double transparent rgb(28, 50, 80);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+  margin: 8rem 0 4rem 0;
+}
+
+.addSongForm {
+  width: 60%;
+}
+.createPostContainer {
+  border-radius: 4px;
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(15, 32, 57, 0.28);
+  border: double transparent rgb(28, 50, 80);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
+}

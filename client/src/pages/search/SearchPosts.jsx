@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Posts from '../../components/Posts'
+import SearchPostsComp from '../../components/SearchPostsComp'
 import SearchedNav from '../../components/SearchedNav'
 
 
@@ -19,8 +19,8 @@ const SearchPosts = () => {
   return (
     <div className='searchPosts'>
       <SearchedNav />
-      <div>
-        <Posts posts={posts} />
+      <div className='searchPagePosts'>
+        <SearchPostsComp posts={posts} />
       </div>
     </div>
   )

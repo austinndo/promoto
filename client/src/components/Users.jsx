@@ -9,7 +9,7 @@ const Users = (props) => {
         {props.users.map((user) => (
         <div key={user._id} className="usersContainerContent">
         <h4>{user.username}</h4>
-        <h5>Favorite Genres: {user.favoriteGenres}</h5>
+        <h5>Favorite Genres: <br></br>{user.favoriteGenres}</h5>
         </div>))}
       </div>
     )

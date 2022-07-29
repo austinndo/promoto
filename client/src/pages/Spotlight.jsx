@@ -16,14 +16,16 @@ const Spotlight = () => {
   }, [])
 
   return (
-  <div>
-    <div className="navbar">
+  <div className='Spotlight'>
+    <div className="spotlightNavbar">
       < Nav />
     </div>
+    <div className='spotlightHeader'>Featured Songs:</div>
     <div className='spotlight'>
       {songs.map((song) => (
       <div key={song.id} className="songList">
-      <h4>{song.name}</h4>
+      <h4>"{song.name}"</h4>
+      <h5>-{song.artist}</h5>
       </div>))}
     </div>
   </div>
