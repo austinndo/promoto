@@ -17,7 +17,7 @@ const SearchUsers = () => {
   }, [])
 
   return (
-    <div>
+    <div className='searchUsers'>
       <SearchedNav />
       <div>
         <Users users={users} />

@@ -17,7 +17,7 @@ const SearchSongs = () => {
   }, [])
 
   return (
-    <div>
+    <div className='searchSongs'>
       <SearchedNav />
       <div>
         <Songs songs={songs} />

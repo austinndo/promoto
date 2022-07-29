@@ -17,7 +17,7 @@ const SearchPosts = () => {
   }, [])
 
   return (
-    <div>
+    <div className='searchPosts'>
       <SearchedNav />
       <div>
         <Posts posts={posts} />
