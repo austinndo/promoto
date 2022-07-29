@@ -10,7 +10,7 @@ const Search = () => {
   <div>
     <nav className="searchNavbar">
       <h2 style={ {color: "black"} }>Search</h2>
-      <Link to="/">Home</Link>
+      <Link to="/promoto">Home</Link>
     </nav>
 
     <div className='search'>

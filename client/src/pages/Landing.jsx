@@ -1,23 +1,27 @@
 import { Link } from 'react-router-dom'
-import "../styles/Landing.css"
+import "../styles/App.css"
 
 const Landing = () => {
   
   return (
-    <div classname="landingPage">
-      <div classname="login"> 
-        <h1>Login</h1>
-        <form>
-        <input type="text" name={'username'} placeholder={'username'} />
-        <input type="password" name={'password'} placeholder={'password'} />
-        <button><Link to="/promoto">Login</Link></button>
-        </form>
-      </div>
+    <div className="landingPage">
+      <div className="landingPageContainer">
+        <div className="landingPageTitle">
+        <h1>Promoto</h1>
+        </div>
+        <div className="login"> 
+          <h3>Login</h3>
+          <form>
+          <input type="text" name={'username'} placeholder={'username'} />
+          <input type="password" name={'password'} placeholder={'password'} />
+          <button><Link to="/promoto"><i class="fa fa-play"></i></Link></button>
+          </form>
+        </div>
 
         <div className="signupLink">
-          <h2>New to Promoto? Sign up here:</h2>
-          <Link to="/promoto/signup">Signup</Link>
+          <h4>New? Sign up <Link to="/promoto/signup">here</Link> </h4>
         </div>
+      </div>
     </div>
   )
 }

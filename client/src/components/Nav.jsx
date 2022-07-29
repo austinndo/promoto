@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
   
   return (
-    <nav className="navbar">
+    <div>
       <h2 style={ {color: "black"} }>Promoto</h2>
       <div className='navbarLinks'>
         <Link to="/promoto">Home</Link>
@@ -11,9 +11,8 @@ const Nav = () => {
         <Link to="/promoto/spotlight">Spotlight</Link>
         <Link to="/promoto/add">Add</Link>
         <Link to="/promoto/edit">Edit</Link>
-        <Link to="/promoto/login">Login</Link>
       </div>
-    </nav>
+    </div>
   )
 }
 
