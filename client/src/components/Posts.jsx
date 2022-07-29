@@ -10,10 +10,10 @@ const Post = (props) => {
       <div key={post._id} className="postsContainerContent">
       <img className="postContainerImage" src={post.image} alt="post-content"/>
       <div className="postContainerUsernameLikes">
-      <h4>{post.username}</h4>
-      <h5>Likes: {post.likes}</h5>
+      <h4 className="postUsername">{post.username}</h4>
+      <h5 className="postLikes">{post.likes}<i class="fa fa-thumbs-up" aria-hidden="true"></i></h5>
       </div>
-      <h5>{post.description}</h5>
+      <h5 className="postDescription">{post.description}</h5>
       </div>))}
     </div>
   )

@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <div>
       <div className='navbarTitle'>
-        <h2 style={ {color: "black"} }>Promoto</h2>
+        <h2>Promoto</h2>
       </div>
       <div className='navbarLinks'>
         <Link to="/promoto" alt="Home"><i class="fa fa-home fa-2x"></i></Link>
