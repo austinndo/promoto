@@ -43,18 +43,20 @@ const DeleteSongPage = () => {
   return (
     <div className="deleteSongPage">
       <div className="backToEdit">
-        < Link to="/promoto/edit"></Link>
+        < Link to="/promoto/edit">Back</Link>
       </div>
 
-      <div className="updateSongContainer">
+      <div className="deleteSongContainer">
+        <div className="deleteSongTitle">
       <h1>Select Song</h1>
-        <form>
+      </div>
+        <form className="deleteSongForm">
         <input type="number" onChange={handleChange} name={'id'} placeholder={"*Song Id Number"} required /> <br></br>
         <button onClick={deleteSong}>Remove Song</button>
         </form>
       </div>
 
-      <div className='searchSongsContainer'>
+      <div className='deleteSongsContainer'>
         {songs.map((song) => (
         <div key={song.id} className="searchSongs">
         <img className="songCover" src={song.cover} alt="album-cover"/>

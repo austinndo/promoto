@@ -80,7 +80,7 @@ const handleChange = (e) => {
         </form>
       </div>
 
-      <div className='searchPostsContainer'>
+      <div className='editPostsContainer'>
         {posts.map((post) => (
         <div key={post._id} className="searchPosts">
         <img className="searchPostImage" src={post.image} alt="post-content"/>

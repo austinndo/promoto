@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Nav from "../../components/Nav"
 import { Link } from 'react-router-dom'
 
 const DeletePostPage = () => {
@@ -49,21 +48,23 @@ const DeletePostPage = () => {
   return (
     <div className="deletePostPage">
       <div className="backToEdit">
-        < Link to="/promoto/edit"></Link>
+        < Link to="/promoto/edit">Back</Link>
       </div>
 
-      <div className="updatePostContainer">
+      <div className="deletePostContainer">
+      <div className="deletePostTitle">
       <h1>Select Post</h1>
-        <form>
+      </div>
+        <form className="deletePostForm">
         <input type="text" onChange={handleChange} name={'_id'} placeholder={"*Post Id Number"} required /> <br></br>
         <button onClick={deletePost}>Remove Post</button>
         </form>
       </div>
 
-      <div className='searchPostsContainer'>
+      <div className='deletePagePosts'>
         {posts.map((post) => (
-        <div key={post._id} className="searchPosts">
-        <img className="searchPostImage" src={post.image} alt="post-content"/>
+        <div key={post._id} className="deletePosts">
+        <img className="deletePostImage" src={post.image} alt="post-content"/>
         <h4>{post.username}</h4>
         <h4>Post Id:{post._id}</h4>
       </div>))}
