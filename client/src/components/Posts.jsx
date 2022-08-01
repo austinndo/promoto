@@ -22,12 +22,12 @@ const Post = (props) => {
       </i></h5>
       </div>
       <h5 className="postDescription">{post.description}</h5>
-      <button onClick={async () => {
+      <button style={{cursor:"pointer"}} className="deletePostButton" onClick={async () => {
             await axios({
             method: 'delete',
             url: `http://localhost:3001/post/${post._id}`
             })
-      }}> Delete </button>
+      }}>Delete</button>
       </div>))}
     </div>
   )

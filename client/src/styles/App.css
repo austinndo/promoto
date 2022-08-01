@@ -152,6 +152,12 @@
   width: 100%;
 }
 
+.deletePostButton {
+  background: rgba(74, 74, 74, 0.28);
+  border: double transparent rgb(28, 50, 80);
+  font-family: 'Poppins', sans-serif;
+}
+
 /* -- CSS for Posts in search and edit - */
 
 .searchPostsContainer {
