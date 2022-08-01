@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const getPosts = async () => {
       const posts = await axios.get('http://localhost:3001/posts')
-      setPosts(posts.data.posts)
+      setPosts(posts.data.posts.reverse())
     }
     getPosts()
   }, [])

@@ -130,7 +130,7 @@ const Create = () => {
       <div className="createFormContainers">
         <div className="addSongContainer">
         <h1>Add Song #{nextSongId}</h1>
-          <form>
+          <form className="addSongForm">
           <input type="number" onChange={handleChangeSong} name={'id'} placeholder={'*song number, copy from above!'} required/> <br></br>
           <input type="text" onChange={handleChangeSong} name={'name'} placeholder={'*name'} required/> <br></br>
           <input type="text" onChange={handleChangeSong} name={'artist'} placeholder={'*artist'} required/> <br></br>
@@ -142,8 +142,10 @@ const Create = () => {
         </div>
 
         <div className="createPostContainer">
-        <h1>Create a new post</h1>
-          <form>
+          <div className="createPostTitle">
+            <h1>Create a new post</h1>
+          </div>
+          <form className="createPostForm">
           <input type="number" onChange={handleChangePost} name={'songId'} placeholder={'*song id'} required/> <br></br>
           <input type="text" onChange={handleChangePost} name={'username'} placeholder={'*username'} required/> <br></br>
           <input type="text" onChange={handleChangePost} name={'title'} placeholder={'*title'} required/> <br></br>

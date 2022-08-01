@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const Post = (props) => {
 
   if(!props.posts) {
@@ -14,6 +16,12 @@ const Post = (props) => {
       <h5 className="postLikes">{post.likes}<i class="fa fa-thumbs-up" aria-hidden="true"></i></h5>
       </div>
       <h5 className="postDescription">{post.description}</h5>
+      <button onClick={async () => {
+            await axios({
+            method: 'delete',
+            url: `http://localhost:3001/post/${post._id}`
+            })
+      }}> Delete </button>
       </div>))}
     </div>
   )
