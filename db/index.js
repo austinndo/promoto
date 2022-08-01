@@ -11,7 +11,7 @@ let dbUrl =
 
 mongoose
   //previous .connect(MONGODB_URI, { ... })
-  .connect(dbUrl, { useUnifiedTopology: true, useNewUrlParser: true })
+  .connect(dbUrl)
   .then(() => {
     console.log('Successfully connected to Promoto MongoDB.')
   })
