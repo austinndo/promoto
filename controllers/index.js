@@ -127,6 +127,8 @@ const updatePost = async (req, res) => {
   try {
     const postId = req.params.id
     const updatedPost = await Post.findByIdAndUpdate({ _id: postId }, req.body)
+    //const updatedPost = await Post.findByIdAndUpdate({ _id: postId}, req.body, { new: true })
+    //from Aug 1 review: { new: true } will display the updated post after calling the function!
     res.json(updatedPost)
   } catch (error) {
     throw error

@@ -22,23 +22,42 @@
 - Express / Node.js
 - React
 
-1. DuckDuckGo
-
 ---
 
-## **_Trello_**
+## **_Project Development_**
 
-### View the project development [here](https://trello.com/invite/b/C5WnHRWw/0e369414cd57d38893995b2877c4b12e/promoto)
+### [Trello](https://trello.com/invite/b/C5WnHRWw/0e369414cd57d38893995b2877c4b12e/promoto)
 
 ### [Wireframe](https://wireframe.cc/Hyra9u)
 
+![Wireframe](README_assets/wireframe.png)
+
 ### [ERD](https://drive.google.com/file/d/1GZttuTBhEKmNavor16SxlhXQMraRVypQ/view?usp=sharing)
 
----
+## ![ERD](README_assets/erd.png)
 
 ## **_Images_**
 
+### Landing Page
+
+![Landing Page](README_assets/landing-page.png)
+
+### Homepage Post Example
+
+![Homepage](README_assets/homepage-post.png)
+
+### Create Forms
+
+![Create Forms](README_assets/create-forms.png)
+
 ## **_Future Updates_**
+
+<ul>
+<li> Set up user authentication
+<li> Have likes and updates appear in realtime
+<li> Incorporate media/audio players
+<li> Edit song and post schema to connect post ids to songs
+</ul>
 
 ---
 
