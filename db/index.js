@@ -4,9 +4,12 @@ require('dotenv').config()
 // previous
 // let MONGODB_URI = 'mongodb://127.0.0.1:27017/promotoDatabase'
 
+let MONGODB_URI =
+  'mongodb+srv://promoter:get_this_party_started@promoto-cluster.i57hr.mongodb.net/promotoDatabase?retryWrites=true&w=majority'
+
 let dbUrl =
   process.env.NODE_ENV === 'production'
-    ? process.env.REACT_APP_MONGODB_URI
+    ? MONGODB_URI
     : 'mongodb://127.0.0.1:27017/promotoDatabase'
 
 mongoose
