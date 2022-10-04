@@ -65,6 +65,11 @@
   justify-content: space-between;
   margin: 2rem;
   padding-bottom: 2rem;
+  text-decoration: none;
+}
+
+.navLink {
+  color: rgb(72, 21, 119);
 }
 
 .searchNavbar {
