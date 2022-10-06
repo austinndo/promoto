@@ -64,7 +64,7 @@ const Create = () => {
 
   await axios({
     method: 'post',
-    url: 'https://promoto-server.herokuapp.com/song',
+    url: 'http://localhost:3001/song',
     data: createdSong
   }) 
 
