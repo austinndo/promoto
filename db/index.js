@@ -5,7 +5,7 @@ require('dotenv').config()
 // let MONGODB_URI = 'mongodb://127.0.0.1:27017/promotoDatabase'
 
 let MONGODB_URI =
-  'mongodb+srv://promoter:get_this_party_started@promoto-cluster.i57hr.mongodb.net/promotoDatabase?retryWrites=true&w=majority'
+  'mongodb+srv://promoter:promoted@promoto-db.eqtbjys.mongodb.net/?retryWrites=true&w=majority'
 
 let dbUrl =
   process.env.NODE_ENV === 'production'
@@ -13,7 +13,6 @@ let dbUrl =
     : 'mongodb://127.0.0.1:27017/promotoDatabase'
 
 mongoose
-  //previous .connect(MONGODB_URI, { ... })
   .connect(dbUrl)
   .then(() => {
     console.log('Successfully connected to Promoto MongoDB.')
