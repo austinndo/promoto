@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Nav from "../components/Nav"
 import Posts from '../components/Posts'
-import postsData from '../components/postsData'
 
 const Home = () => {
 
@@ -16,34 +15,18 @@ const Home = () => {
     getPosts()
   }, [])
 
-const postsTrue = (
+  return (
 
-  <div className="home">
-    <div className="homeNavbar">
-      < Nav />
+    <div className="home">
+      <div className="homeNavbar">
+        < Nav />
+      </div>
+      
+      <div className="homePagePosts">
+        < Posts posts={posts}/>
+      </div>
     </div>
-    
-    <div className="homePagePosts">
-      < Posts posts={posts}/>
-    </div>
-  </div>
-)
-
-const postsSeed = (
-
-  <div className="home">
-    <div className="homeNavbar">
-      < Nav />
-    </div>
-    
-    <div className="homePagePosts">
-      < Posts posts={postsData}/>
-    </div>
-  </div>
-)
-
-return (posts.length > 2) ? postsTrue : postsSeed
-  
+  )
 }
 
 export default Home
