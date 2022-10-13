@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const Post = (props) => {
 
-  if(props.posts === []) {
+  if(props.posts.length < 3) {
 
     const postsData = [
       {
