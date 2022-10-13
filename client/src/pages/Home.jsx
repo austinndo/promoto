@@ -42,7 +42,7 @@ const postsSeed = (
   </div>
 )
 
-return posts ? postsTrue : postsSeed
+return (posts.length > 2) ? postsTrue : postsSeed
   
 }
 
