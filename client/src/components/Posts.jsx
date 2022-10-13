@@ -82,7 +82,6 @@ const Post = (props) => {
         </i></h5>
         </div>
         <h5 className="postDescription">{post.description}</h5>
-        <button style={{cursor:"pointer"}} className="deletePostButton" onClick={alert(`Can't delete at this time.`)}>Delete</button>
         </div>))}
       </div>
     )
