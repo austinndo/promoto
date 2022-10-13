@@ -68,7 +68,7 @@ const Post = (props) => {
 
     return (
       <div className="postsContainer">
-        {props.postsData.map((post) => (
+        {postsData.map((post) => (
         <div key={post._id} className="postsContainerContent">
         <img className="postContainerImage" src={post.image} alt="post-content"/>
         <div className="postContainerUsernameLikes">
