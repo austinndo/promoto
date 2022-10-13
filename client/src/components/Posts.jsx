@@ -4,7 +4,7 @@ const Post = (props) => {
 
   if(!props.posts) {
 
-    postsData = [
+    const postsData = [
       {
         songId: 1,
         username: 'mjbfan',
