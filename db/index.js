@@ -1,15 +1,9 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
-// previous
-// let MONGODB_URI = 'mongodb://127.0.0.1:27017/promotoDatabase'
-
-let MONGODB_URI =
-  'mongodb+srv://promoter:promoted@promoto-db.eqtbjys.mongodb.net/?retryWrites=true&w=majority'
-
 let dbUrl =
   process.env.NODE_ENV === 'production'
-    ? MONGODB_URI
+    ? process.env.MONGODB_URI
     : 'mongodb://127.0.0.1:27017/promotoDatabase'
 
 mongoose
