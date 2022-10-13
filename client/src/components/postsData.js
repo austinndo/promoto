@@ -1,4 +1,4 @@
-;[
+posts = [
   {
     songId: 1,
     username: 'mjbfan',
